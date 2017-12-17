@@ -7,6 +7,8 @@ import { StyleSheet,
 import { StackNavigator } from 'react-navigation';
 import { Tile } from 'react-native-elements';
 import Details from './Details';
+import { RECIPES } from './constants/constants';
+import { footerHeight } from './constants/styles';
 
 const styles = StyleSheet.create({
   view: {
@@ -21,6 +23,12 @@ class Main extends React.Component {
   }
 
   render() {
+    RECIPES.map((recipe) => {
+      const eachRecipe = Object.values(recipe);
+      eachRecipe.map((data) => {
+        console.log(data);
+      });
+    });
     return (
       <View style={styles.view}>
         <ScrollView>
@@ -46,8 +54,8 @@ class Main extends React.Component {
             onPress={() => { this.props.navigation.navigate('Details'); }}
           />
         </ScrollView>
-        <View>
-          <Text>hihi</Text>
+        <View style={{ height: footerHeight }}>
+          <Text>Fotoer here</Text>
         </View>
       </View>
     );
