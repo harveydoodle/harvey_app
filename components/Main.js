@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet,
-  Text,
+import {
+  StyleSheet,
   ScrollView,
   View,
   Image,
@@ -8,8 +8,9 @@ import { StyleSheet,
 import { StackNavigator } from 'react-navigation';
 import { Tile } from 'react-native-elements';
 import Details from './Details';
+import Footer from './Footer';
 import { RECIPES } from '../constants/constants';
-import { footerHeight, colors } from '../constants/styles';
+import { colors } from '../constants/styles';
 
 const styles = StyleSheet.create({
   view: {
@@ -62,9 +63,7 @@ class Main extends React.Component {
         <ScrollView>
           {tiles}
         </ScrollView>
-        <View style={{ height: footerHeight }}>
-          <Text>Footer here</Text>
-        </View>
+        <Footer />
       </View>
     );
   }
