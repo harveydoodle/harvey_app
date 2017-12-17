@@ -3,8 +3,9 @@ import { StyleSheet,
   Text,
   View,
   ImageBackground,
+  Image,
+  TouchableHighlight,
 } from 'react-native';
-import { Button } from 'react-native-elements';
 import { StackNavigator } from 'react-navigation';
 import Main from './Main';
 import { colors } from './constants/styles';
@@ -14,7 +15,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   backgroundImage: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     resizeMode: 'cover',
@@ -22,28 +22,29 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   button: {
-    flex: 1,
-    alignSelf: 'stretch',
-    alignItems: 'center',
+    width: 270,
+    resizeMode: 'contain',
+    marginTop: '15%',
+  },
+  contentWrapper: {
+    alignItems: 'flex-start',
     justifyContent: 'center',
-    // width: 20,
-    height: 10,
+    alignContent: 'center',
+    marginTop: '95%',
   },
   textWrapper: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: '55%',
   },
   header: {
     color: colors.darkBlue,
     fontWeight: '800',
     fontSize: 32,
-    backgroundColor: 'transparent',
+    backgroundColor: 'rgba(0,0,0,0)',
   },
   subheading: {
     color: colors.darkBlue,
-    backgroundColor: 'transparent',
+    backgroundColor: 'rgba(0,0,0,0)',
     fontSize: 18,
   },
 });
@@ -63,18 +64,15 @@ class SplashPage extends React.Component {
     return (
       <View style={styles.container}>
         <ImageBackground source={require('./public/splash.png')} style={styles.backgroundImage}>
-          <View style={styles.textWrapper}>
-            <Text style={styles.header}>Harvey</Text>
-            <Text style={styles.subheading}>The human-sized goldendoodle</Text>
+          <View style={styles.contentWrapper}>
+            <View style={styles.textWrapper}>
+              <Text style={styles.header}>Harvey</Text>
+              <Text style={styles.subheading}>The human-sized goldendoodle</Text>
+            </View>
+            <TouchableHighlight onPress={this.enterPressed}>
+              <Image source={require('./public/white_button.png')} style={styles.button} />
+            </TouchableHighlight>
           </View>
-          <ImageBackground source={require('./public/white_button.png')} style={styles.button}>
-            <Text>Who\s a good boy?</Text>
-          </ImageBackground>
-          <Button
-            onPress={this.enterPressed}
-          >
-          <Text>Who\s a good boy?</Text>
-          </Button>
         </ImageBackground>
       </View>
     );
