@@ -89,7 +89,6 @@ const ModalStack = StackNavigator({
     screen: Main,
     navigationOptions: {
       header: null,
-      tintColor: 'red',
     },
   },
 });

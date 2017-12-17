@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
 });
 
 class Details extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
   }
 

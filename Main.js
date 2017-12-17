@@ -45,7 +45,15 @@ class Main extends React.Component {
           title={data.title}
           featured
           // caption="The perfect midnight snack."
-          onPress={() => { this.props.navigation.navigate('Details'); }}
+          onPress={() => {
+            this.props.navigation.navigate(
+              'Details',
+              { name: data.title },
+              {
+                params: { name: 'Doge' },
+              },
+            );
+          }}
         />
       ));
     });
@@ -68,14 +76,17 @@ const MainModalStack = StackNavigator(
       headerMode: 'screen',
       screen: Main,
       navigationOptions: () => ({
-        header: <View style={styles.headerIconWrapper}><Image source={require('./public/harvey.png')} style={styles.headerIcon} /></View>,
+        header: (
+          <View style={styles.headerIconWrapper}>
+            <Image source={require('./public/harvey.png')} style={styles.headerIcon} />
+          </View>),
       }),
     },
     Details: {
       screen: Details,
-      navigationOptions: {
-        title: 'Item Clicked Title',
-      },
+      navigationOptions: ({ navigation }) => ({
+        title: `${navigation.state.params.name}`,
+      }),
     },
   },
   {
