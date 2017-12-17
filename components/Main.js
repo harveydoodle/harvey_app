@@ -11,6 +11,7 @@ import { StackNavigator } from 'react-navigation';
 import { Tile } from 'react-native-elements';
 import Details from './details';
 import Footer from './footer';
+import HarveyFinder from './harvey_finder';
 import { RECIPES } from '../constants/constants';
 import { colors } from '../constants/styles';
 
@@ -51,10 +52,10 @@ class Main extends React.Component {
   locationPressed() {
     console.log('location pressed');
 
-  //   this.props.navigation.navigate(
-  //     'Main',
-  //     { category: 'location' },
-  //   );
+    this.props.navigation.navigate(
+      'Location',
+      { category: 'location' },
+    );
   }
 
   sweetPressed() {
@@ -120,6 +121,12 @@ const MainModalStack = StackNavigator(
     },
     Details: {
       screen: Details,
+      navigationOptions: ({ navigation }) => ({
+        title: `${navigation.state.params.name}`,
+      }),
+    },
+    Location: {
+      screen: HarveyFinder,
       navigationOptions: ({ navigation }) => ({
         title: `${navigation.state.params.name}`,
       }),
