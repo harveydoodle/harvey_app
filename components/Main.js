@@ -23,10 +23,10 @@ const styles = StyleSheet.create({
   },
   headerIcon: {
     alignSelf: 'center',
-    height: 47,
+    height: 32,
     resizeMode: 'contain',
-    marginTop: 35,
-    marginBottom: 5,
+    marginTop: 45,
+    marginBottom: 10,
   },
 });
 

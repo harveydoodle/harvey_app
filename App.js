@@ -54,6 +54,7 @@ class SplashPage extends React.Component {
     super(props);
     this.state = {};
     this.enterPressed = this.enterPressed.bind(this);
+    console.disableYellowBox = true;
   }
 
   enterPressed() {
