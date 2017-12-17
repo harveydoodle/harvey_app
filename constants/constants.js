@@ -3,7 +3,7 @@ const RECIPES = [
     recipe_one: {
       category: 'savory',
       title: 'Scrambled Eggs',
-      image: '',
+      image: require('../public/harvey.jpg'),
       ingredients: ['3 eggs', '1/4 cup diced zucchini', '1 handful spinach', '1/8 cup cheese'],
       instructions: [
         'Turn non-stick pan on medium heat.',
@@ -18,7 +18,7 @@ const RECIPES = [
     recipe_two: {
       category: 'savory',
       title: 'Vegetable Stirfry',
-      image: '',
+      image: require('../public/harvey.jpg'),
       ingredients: ['1/4 cup diced green beans', '1/4 cup diced zucchini', '1/4 cup diced carrots', '1/4 cup diced seedless cucumbers', '1/2 cup cooked white rice'],
       instructions: [
         'Turn non-stick pan on medium heat.',
@@ -33,7 +33,7 @@ const RECIPES = [
     recipe_three: {
       category: 'savory',
       title: 'Egg Salad',
-      image: '',
+      image: require('../public/harvey.jpg'),
       ingredients: ['2 eggs', '1/4 cup sweet potato', '1/4 cup pumpkin'],
       instructions: [
         'Turn non-stick pan on medium heat.',
@@ -48,7 +48,7 @@ const RECIPES = [
     recipe_four: {
       category: 'sweet',
       title: 'Fruit Plate',
-      image: '',
+      image: require('../public/harvey.jpg'),
       ingredients: ['1/4 cup frozen blueberries', '1/4 cup frozen banana', '1/4 cup diced apples', '1/4 cup diced seedless watermelon'],
       instructions: [
         'Mix all fruits together. Serve once frozen fruits are no longer frozen solid.',
@@ -59,7 +59,7 @@ const RECIPES = [
     recipe_five: {
       category: 'sweet',
       title: 'Peanut Butter Muffins',
-      image: '',
+      image: require('../public/harvey.jpg'),
       ingredients: ['1 egg', '1/2 finely grated apple', '3 tablespoons peanut butter', '1/2 teaspoon baking powder'],
       instructions: [
         'Preheat oven to 350°C',
@@ -74,7 +74,7 @@ const RECIPES = [
     recipe_six: {
       category: 'sweet',
       title: 'Blueberry Pancakes',
-      image: '',
+      image: require('../public/harvey.jpg'),
       ingredients: ['1 egg', '1/4 cup blueberries', '1 banana', '1 tablespoon peanut butter'],
       instructions: [
         'Mash banana with a fork.',

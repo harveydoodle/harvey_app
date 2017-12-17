@@ -23,39 +23,26 @@ class Main extends React.Component {
   }
 
   render() {
-    RECIPES.map((recipe) => {
+    const tiles = RECIPES.map((recipe) => {
       const eachRecipe = Object.values(recipe);
-      eachRecipe.map((data) => {
-        console.log(data);
-      });
+      return eachRecipe.map(data => (
+        <Tile
+          key={data.title}
+          imageSrc={data.image}
+          title={data.title}
+          featured
+          // caption="The perfect midnight snack."
+          onPress={() => { this.props.navigation.navigate('Details'); }}
+        />
+      ));
     });
     return (
       <View style={styles.view}>
         <ScrollView>
-          <Tile
-            imageSrc={require('./public/harvey.jpg')}
-            title="Bacon wrapped in bacon."
-            featured
-            caption="The perfect midnight snack."
-            onPress={() => { this.props.navigation.navigate('Details'); }}
-          />
-          <Tile
-            imageSrc={require('./public/harvey.jpg')}
-            title="Bacon wrapped in bacon."
-            featured
-            caption="The perfect midnight snack."
-            onPress={() => { this.props.navigation.navigate('Details'); }}
-          />
-          <Tile
-            imageSrc={require('./public/harvey.jpg')}
-            title="Bacon wrapped in bacon."
-            featured
-            caption="The perfect midnight snack."
-            onPress={() => { this.props.navigation.navigate('Details'); }}
-          />
+          {tiles}
         </ScrollView>
         <View style={{ height: footerHeight }}>
-          <Text>Fotoer here</Text>
+          <Text>Footer here</Text>
         </View>
       </View>
     );
