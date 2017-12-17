@@ -2,17 +2,49 @@ import React from 'react';
 import { StyleSheet,
   Text,
   View,
+  ImageBackground,
 } from 'react-native';
 import { Button } from 'react-native-elements';
 import { StackNavigator } from 'react-navigation';
 import Main from './Main';
+import { colors } from './constants/styles';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+  },
+  backgroundImage: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    resizeMode: 'cover',
+    width: '100%',
+    height: '100%',
+  },
+  button: {
+    flex: 1,
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center',
+    // width: 20,
+    height: 10,
+  },
+  textWrapper: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: '55%',
+  },
+  header: {
+    color: colors.darkBlue,
+    fontWeight: '800',
+    fontSize: 32,
+    backgroundColor: 'transparent',
+  },
+  subheading: {
+    color: colors.darkBlue,
+    backgroundColor: 'transparent',
+    fontSize: 18,
   },
 });
 
@@ -30,11 +62,20 @@ class SplashPage extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>HARVEY</Text>
-        <Button
-          title="enter"
-          onPress={this.enterPressed}
-        />
+        <ImageBackground source={require('./public/splash.png')} style={styles.backgroundImage}>
+          <View style={styles.textWrapper}>
+            <Text style={styles.header}>Harvey</Text>
+            <Text style={styles.subheading}>The human-sized goldendoodle</Text>
+          </View>
+          <ImageBackground source={require('./public/white_button.png')} style={styles.button}>
+            <Text>Who\s a good boy?</Text>
+          </ImageBackground>
+          <Button
+            onPress={this.enterPressed}
+          >
+          <Text>Who\s a good boy?</Text>
+          </Button>
+        </ImageBackground>
       </View>
     );
   }
