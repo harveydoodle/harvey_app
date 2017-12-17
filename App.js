@@ -4,7 +4,7 @@ import { StyleSheet,
   View,
   ImageBackground,
   Image,
-  TouchableHighlight,
+  TouchableOpacity,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Main from './Main';
@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
   backgroundImage: {
     alignItems: 'center',
     justifyContent: 'center',
-    resizeMode: 'cover',
     width: '100%',
     height: '100%',
   },
@@ -69,9 +68,9 @@ class SplashPage extends React.Component {
               <Text style={styles.header}>Harvey</Text>
               <Text style={styles.subheading}>The human-sized goldendoodle</Text>
             </View>
-            <TouchableHighlight onPress={this.enterPressed}>
+            <TouchableOpacity activeOpacity={0.8} onPress={this.enterPressed}>
               <Image source={require('./public/white_button.png')} style={styles.button} />
-            </TouchableHighlight>
+            </TouchableOpacity>
           </View>
         </ImageBackground>
       </View>
@@ -90,6 +89,7 @@ const ModalStack = StackNavigator({
     screen: Main,
     navigationOptions: {
       header: null,
+      tintColor: 'red',
     },
   },
 });

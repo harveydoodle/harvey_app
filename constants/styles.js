@@ -7,6 +7,8 @@ const colors = {
   blue: '#3C7BDA',
   lightBlue: '#DFECFF',
   darkBlue: '#2068B0',
+  headerDefaultGrey: '#F5F5F5',
+  headerBorderBottomGrey: '#9E9E9E',
 };
 
 module.exports = {

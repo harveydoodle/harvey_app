@@ -3,16 +3,29 @@ import { StyleSheet,
   Text,
   ScrollView,
   View,
+  Image,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Tile } from 'react-native-elements';
 import Details from './Details';
 import { RECIPES } from './constants/constants';
-import { footerHeight } from './constants/styles';
+import { footerHeight, colors } from './constants/styles';
 
 const styles = StyleSheet.create({
   view: {
     flex: 1,
+  },
+  headerIconWrapper: {
+    backgroundColor: colors.headerDefaultGrey,
+    borderBottomWidth: 0.5,
+    borderBottomColor: colors.headerBorderBottomGrey,
+  },
+  headerIcon: {
+    alignSelf: 'center',
+    height: 47,
+    resizeMode: 'contain',
+    marginTop: 35,
+    marginBottom: 5,
   },
 });
 
@@ -52,10 +65,11 @@ class Main extends React.Component {
 const MainModalStack = StackNavigator(
   {
     Main: {
+      headerMode: 'screen',
       screen: Main,
-      navigationOptions: {
-        title: 'Harvey\'s Favourites',
-      },
+      navigationOptions: () => ({
+        header: <View style={styles.headerIconWrapper}><Image source={require('./public/harvey.png')} style={styles.headerIcon} /></View>,
+      }),
     },
     Details: {
       screen: Details,
