@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import Main from './components/Main';
+import Main from './components/main';
 import { colors } from './constants/styles';
 
 const styles = StyleSheet.create({

@@ -5,8 +5,8 @@ import { StyleSheet,
   View,
   ScrollView,
 } from 'react-native';
-import Footer from './Footer';
-import MainModalStack from './Main';
+import Footer from './footer';
+import MainModalStack from './main';
 
 const styles = StyleSheet.create({
   view: {

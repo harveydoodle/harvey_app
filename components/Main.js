@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Tile } from 'react-native-elements';
-import Details from './Details';
-import Footer from './Footer';
+import Details from './details';
+import Footer from './footer';
 import { RECIPES } from '../constants/constants';
 import { colors } from '../constants/styles';
 
