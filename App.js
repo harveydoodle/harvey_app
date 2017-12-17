@@ -58,7 +58,11 @@ class SplashPage extends React.Component {
   }
 
   enterPressed() {
-    this.props.navigation.navigate('Main');
+    this.props.navigation.navigate(
+      'Main',
+      {},
+      { params: { category: 'savoury' } },
+    );
   }
 
   render() {

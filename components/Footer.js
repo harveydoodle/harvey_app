@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   StyleSheet,
   TouchableOpacity,
-  Text,
   View,
   Image,
 } from 'react-native';
@@ -28,36 +27,61 @@ const styles = StyleSheet.create({
   },
 });
 
-const Footer = () => (
-  <View style={styles.footer}>
-    <TouchableOpacity
-      onPress={() => {console.log('savory snacks')}}
-      style={styles.imageWrapper}
-    >
-      <Image
-        source={require('../public/harvey.png')}
-        style={styles.footerIcon}
-      />
-    </TouchableOpacity>
-    <TouchableOpacity
-      style={styles.imageWrapper}
-      onPress={() => {console.log('goes to map')}}
-    >
-      <Image
-        source={require('../public/harvey.png')}
-        style={styles.footerIcon}
-      />
-    </TouchableOpacity>
-    <TouchableOpacity
-      onPress={() => {console.log('sweet snacks')}}
-      style={styles.imageWrapper}
-    >
-      <Image
-        source={require('../public/harvey.png')}
-        style={styles.footerIcon}
-      />
-    </TouchableOpacity>
-  </View>
-);
+class Footer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      savouryActive: true,
+      sweetActive: false,
+      locationActive: false,
+    };
+  }
+
+  render() {
+    const { savouryActive, sweetActive, locationActive } = this.state;
+    const savouryIcon = savouryActive
+      ? require('../public/savoury_active.png')
+      : require('../public/savoury_inactive.png');
+    const sweetIcon = sweetActive
+      ? require('../public/sweet_active.png')
+      : require('../public/sweet_inactive.png');
+    const locationIcon = locationActive
+      ? require('../public/location_active.png')
+      : require('../public/location_inactive.png');
+
+    return (
+      <View style={styles.footer}>
+        <TouchableOpacity
+          onPress={this.props.savouryPressed}
+          style={styles.imageWrapper}
+        >
+          <Image
+            source={savouryIcon}
+            style={styles.footerIcon}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.imageWrapper}
+          onPress={this.props.locationPressed}
+        >
+          <Image
+            source={locationIcon}
+            style={styles.footerIcon}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={this.props.sweetPressed}
+          style={styles.imageWrapper}
+        >
+          <Image
+            source={sweetIcon}
+            style={styles.footerIcon}
+          />
+        </TouchableOpacity>
+      </View>
+    );
+  }
+}
+
 
 export default Footer;

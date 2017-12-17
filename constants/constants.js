@@ -1,7 +1,7 @@
 const RECIPES = [
   {
     recipe_one: {
-      category: 'savory',
+      category: 'savoury',
       title: 'Scrambled Eggs',
       image: require('../public/squirrel.png'),
       ingredients: ['3 eggs', '1/4 cup diced zucchini', '1 handful spinach', '1/8 cup cheese'],
@@ -16,7 +16,7 @@ const RECIPES = [
   },
   {
     recipe_two: {
-      category: 'savory',
+      category: 'savoury',
       title: 'Vegetable Stirfry',
       image: require('../public/squirrel.png'),
       ingredients: ['1/4 cup diced green beans', '1/4 cup diced zucchini', '1/4 cup diced carrots', '1/4 cup diced seedless cucumbers', '1/2 cup cooked white rice'],
@@ -31,7 +31,7 @@ const RECIPES = [
   },
   {
     recipe_three: {
-      category: 'savory',
+      category: 'savoury',
       title: 'Egg Salad',
       image: require('../public/squirrel.png'),
       ingredients: ['2 eggs', '1/4 cup sweet potato', '1/4 cup pumpkin'],

@@ -4,6 +4,8 @@ import {
   ScrollView,
   View,
   Image,
+  Animated,
+  Easing,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Tile } from 'react-native-elements';
@@ -31,39 +33,74 @@ const styles = StyleSheet.create({
 });
 
 class Main extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
+    this.savouryPressed = this.savouryPressed.bind(this);
+    this.locationPressed = this.locationPressed.bind(this);
+    this.sweetPressed = this.sweetPressed.bind(this);
+  }
+
+  savouryPressed() {
+    this.props.navigation.navigate(
+      'Main',
+      { category: 'savoury' },
+    );
+  }
+
+  locationPressed() {
+    console.log('location pressed');
+
+  //   this.props.navigation.navigate(
+  //     'Main',
+  //     { category: 'location' },
+  //   );
+  }
+
+  sweetPressed() {
+    this.props.navigation.navigate(
+      'Main',
+      { category: 'sweet' },
+    );
   }
 
   render() {
+    const filter = this.props.navigation.state.params.category;
     const tiles = RECIPES.map((recipe) => {
       const eachRecipe = Object.values(recipe);
-      return eachRecipe.map(data => (
-        <Tile
-          key={data.title}
-          imageSrc={data.image}
-          title={data.title}
-          featured
-          // caption="The perfect midnight snack."
-          onPress={() => {
-            this.props.navigation.navigate(
-              'Details',
-              { name: data.title },
-              {
-                params: { name: data.title },
-              },
-            );
-          }}
-        />
-      ));
+      return eachRecipe.map((data) => {
+        if (data.category === filter) {
+          return (
+            <Tile
+              key={data.title}
+              imageSrc={data.image}
+              title={data.title}
+              featured
+              // caption="The perfect midnight snack."
+              onPress={() => {
+                this.props.navigation.navigate(
+                  'Details',
+                  { name: data.title },
+                  {
+                    params: { name: data.title },
+                  },
+                );
+              }}
+            />
+          );
+        }
+      });
     });
     return (
       <View style={styles.view}>
         <ScrollView>
           {tiles}
         </ScrollView>
-        <Footer />
+        <Footer
+          savouryPressed={this.savouryPressed}
+          locationPressed={this.locationPressed}
+          sweetPressed={this.sweetPressed}
+        />
       </View>
     );
   }
@@ -87,6 +124,15 @@ const MainModalStack = StackNavigator(
         title: `${navigation.state.params.name}`,
       }),
     },
+  },
+  {
+    transitionConfig: () => ({
+      transitionSpec: {
+        duration: 0,
+        timing: Animated.timing,
+        easing: Easing.step0,
+      },
+    }),
   },
   {
     headerMode: 'screen',
