@@ -8,8 +8,8 @@ import { StyleSheet,
 import { StackNavigator } from 'react-navigation';
 import { Tile } from 'react-native-elements';
 import Details from './Details';
-import { RECIPES } from './constants/constants';
-import { footerHeight, colors } from './constants/styles';
+import { RECIPES } from '../constants/constants';
+import { footerHeight, colors } from '../constants/styles';
 
 const styles = StyleSheet.create({
   view: {
@@ -50,7 +50,7 @@ class Main extends React.Component {
               'Details',
               { name: data.title },
               {
-                params: { name: 'Doge' },
+                params: { name: data.title },
               },
             );
           }}
@@ -78,7 +78,7 @@ const MainModalStack = StackNavigator(
       navigationOptions: () => ({
         header: (
           <View style={styles.headerIconWrapper}>
-            <Image source={require('./public/harvey.png')} style={styles.headerIcon} />
+            <Image source={require('../public/harvey.png')} style={styles.headerIcon} />
           </View>),
       }),
     },

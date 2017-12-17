@@ -19,6 +19,7 @@ class Details extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <ScrollView style={styles.main}>
         <Text>yo</Text>
