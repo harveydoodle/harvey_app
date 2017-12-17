@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet,
   Text,
   View,
-  Button,
 } from 'react-native';
+import { Button } from 'react-native-elements';
 import { StackNavigator } from 'react-navigation';
 import Main from './Main';
 
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   },
 });
 
-class App extends React.Component {
+class SplashPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -31,7 +31,10 @@ class App extends React.Component {
     return (
       <View style={styles.container}>
         <Text>HARVEY</Text>
-        <Button title="enter" onPress={this.enterPressed} />
+        <Button
+          title="enter"
+          onPress={this.enterPressed}
+        />
       </View>
     );
   }
@@ -39,18 +42,16 @@ class App extends React.Component {
 
 const ModalStack = StackNavigator({
   Home: {
-    screen: App,
+    screen: SplashPage,
     navigationOptions: {
       header: null,
     },
   },
   Main: {
     screen: Main,
-    headerMode: 'none',
-    navigationOptions:
-      {
-        title: 'Harvey\'s Favourites',
-      },
+    navigationOptions: {
+      header: null,
+    },
   },
 });
 
