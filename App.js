@@ -22,25 +22,26 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   button: {
-    width: 270,
+    width: 280,
     resizeMode: 'contain',
-    marginTop: '15%',
+    height: 60,
   },
   contentWrapper: {
     alignItems: 'flex-start',
     justifyContent: 'center',
     alignContent: 'center',
-    marginTop: '95%',
+    marginTop: '90%',
   },
   textWrapper: {
     alignItems: 'center',
-    justifyContent: 'center',
+    alignSelf: 'center',
   },
   header: {
     color: colors.darkBlue,
     fontWeight: '800',
     fontSize: 32,
     backgroundColor: 'rgba(0,0,0,0)',
+    lineHeight: 52,
   },
   subheading: {
     color: colors.darkBlue,
@@ -74,7 +75,7 @@ class SplashPage extends React.Component {
               <Text style={styles.header}>Harvey</Text>
               <Text style={styles.subheading}>The human-sized goldendoodle</Text>
             </View>
-            <TouchableOpacity activeOpacity={0.8} onPress={this.enterPressed}>
+            <TouchableOpacity style={{ marginTop: '15%' }} activeOpacity={0.8} onPress={this.enterPressed}>
               <Image source={require('./public/white_button.png')} style={styles.button} />
             </TouchableOpacity>
           </View>

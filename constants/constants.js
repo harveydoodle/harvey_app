@@ -54,7 +54,7 @@ const recipes = [
     recipe_four: {
       category: 'sweet',
       title: 'Fruit Plate',
-      image: require('../public/squirrel.png'),
+      image: require('../public/fruits.png'),
       ingredients: ['1/4 cup frozen blueberries', '1/4 cup frozen banana', '1/4 cup diced apples', '1/4 cup diced seedless watermelon'],
       instructions: [
         'Mix all fruits together. Serve once frozen fruits are no longer frozen solid.',
@@ -65,7 +65,7 @@ const recipes = [
     recipe_five: {
       category: 'sweet',
       title: 'Peanut Butter Muffins',
-      image: require('../public/squirrel.png'),
+      image: require('../public/muffins.png'),
       ingredients: ['1 egg', '1/2 finely grated apple', '3 tablespoons peanut butter', '1/2 teaspoon baking powder'],
       instructions: [
         'Preheat oven to 350°C',
@@ -80,7 +80,7 @@ const recipes = [
     recipe_six: {
       category: 'sweet',
       title: 'Blueberry Pancakes',
-      image: require('../public/squirrel.png'),
+      image: require('../public/pancakes.png'),
       ingredients: ['1 egg', '1/4 cup blueberries', '1 banana', '1 tablespoon peanut butter'],
       instructions: [
         'Mash banana with a fork.',
