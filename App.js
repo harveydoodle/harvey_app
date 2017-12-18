@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import Main from './components/main';
+import Main from './components/main_page';
 import { colors } from './constants/styles';
 
 const styles = StyleSheet.create({

@@ -6,7 +6,7 @@ import {
   View,
   Image,
 } from 'react-native';
-import { footerHeight, colors } from '../constants/styles';
+import { footerHeight } from '../constants/styles';
 
 const styles = StyleSheet.create({
   footer: {
@@ -14,7 +14,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.headerDefaultGrey,
+    backgroundColor: '#FFF',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: -2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
   },
   imageWrapper: {
     flex: 1,
@@ -23,7 +27,8 @@ const styles = StyleSheet.create({
   },
   footerIcon: {
     flex: 1,
-    width: 25,
+    width: 18,
+    opacity: 0.3,
     resizeMode: 'contain',
   },
 });

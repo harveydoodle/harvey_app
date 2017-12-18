@@ -10,10 +10,10 @@ import {
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Tile } from 'react-native-elements';
-import Details from './details';
-import Footer from './footer';
+import Details from './recipe_details';
+import Footer from './fixed_footer';
 import HarveyFinder from './harvey_finder';
-import RecipeSubheader from './recipe_details';
+import RecipeSubheader from './recipe_subheading_details';
 import { recipes } from '../constants/constants';
 import { colors, navHeaderStyle } from '../constants/styles';
 
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFF',
     padding: 10,
+    borderWidth:1,
   },
   subheaderContentWrapper: {
     alignItems: 'center',
