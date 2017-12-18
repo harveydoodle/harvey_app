@@ -1,8 +1,10 @@
 ## the Harvey App
 This is dedicated to Harvey the Goldendoodle, lover of all things edible.
-A basic app showcasing all of Harvey's favourite foods as well as a bonus feature: Find Harvey.
+A basic app showcasing recipes for all of Harvey's favourite foods as well as a bonus feature: Find Harvey.
 
 To increase efficiency, I've decided to attempt `create-react-native-app` to create an app without xCode.
+
+Optimized for iPhone X.
 
 1. Install the package. Please ensure your npm and node are up to date to latest stable version.
 ```
@@ -10,6 +12,7 @@ npm install
 ```
 
 2. Run the app.
+
 To view on simulator:
 ```
 npm run ios
@@ -24,7 +27,6 @@ npm start
 
 
 ## Notes
-Please ensure your 
 
 Follow https://github.com/react-native-training/react-native-elements/issues/740 for progress on resizeMode console warning.
 
