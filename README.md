@@ -26,7 +26,8 @@ npm start
 ```
 
 
-## Notes
+## Important Notes
+If come across mismatched version error, run `rm -rf node_modules && npm install` and then `watchman watch-del-all`. Then, close all terminals and simulator and run build again. Ensure RN version is 0.50.3.
 
 Follow https://github.com/react-native-training/react-native-elements/issues/740 for progress on resizeMode console warning.
 
