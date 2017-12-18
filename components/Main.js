@@ -31,6 +31,13 @@ const styles = StyleSheet.create({
     marginTop: 45,
     marginBottom: 10,
   },
+  headerIconWithBackButton: {
+    alignSelf: 'center',
+    height: 32,
+    resizeMode: 'contain',
+    // marginTop: 45,
+    marginBottom: 10,
+  },
 });
 
 class Main extends React.Component {
@@ -127,8 +134,11 @@ const MainModalStack = StackNavigator(
     },
     HarveyFinder: {
       screen: HarveyFinder,
-      navigationOptions: ({ navigation }) => ({
-        title: `${navigation.state.params.name}`,
+      navigationOptions: () => ({
+        headerTitle: (
+          <View style={styles.headerIconWrapper}>
+            <Image source={require('../public/harvey.png')} style={styles.headerIconWithBackButton} />
+          </View>),
       }),
     },
   },
