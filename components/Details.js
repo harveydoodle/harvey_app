@@ -48,7 +48,8 @@ class Details extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    const recipeName = this.props.navigation.state.params.name;
+
     return (
       <View style={styles.view}>
         <ScrollView>

@@ -84,7 +84,6 @@ class Main extends React.Component {
               imageSrc={data.image}
               title={data.title}
               featured
-              // caption="The perfect midnight snack."
               onPress={() => {
                 this.props.navigation.navigate(
                   'Details',
@@ -124,6 +123,7 @@ const MainModalStack = StackNavigator(
           <View style={styles.headerIconWrapper}>
             <Image source={require('../public/harvey.png')} style={styles.headerIcon} />
           </View>),
+        gesturesEnabled: false,
       }),
     },
     Details: {
