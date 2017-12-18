@@ -6,6 +6,7 @@ import {
   Image,
   Animated,
   Easing,
+  Text,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Tile } from 'react-native-elements';
@@ -18,9 +19,10 @@ import { colors } from '../constants/styles';
 const styles = StyleSheet.create({
   view: {
     flex: 1,
+    backgroundColor: colors.lightBlue,
   },
   headerIconWrapper: {
-    backgroundColor: colors.headerDefaultGrey,
+    backgroundColor: colors.blue,
     borderBottomWidth: 0.5,
     borderBottomColor: colors.headerBorderBottomGrey,
   },
@@ -35,8 +37,12 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     height: 32,
     resizeMode: 'contain',
-    // marginTop: 45,
     marginBottom: 10,
+  },
+  tile: {
+    flex: 1,
+    backgroundColor: '#FFF',
+    padding: 10,
   },
 });
 
@@ -78,20 +84,32 @@ class Main extends React.Component {
         if (data.category === filter) {
           return (
             <Tile
+              containerStyle={{
+                margin: 15,
+                flex: 1,
+                width: 'auto',
+                height: 220,
+                backgroundColor: '#FFF',
+              }}
+              imageContainerStyle={{ flex: 2 }}
+              contentContainerStyle={{ flex: 1 }}
+              titleStyle={{color:colors.darkBlue, fontWeight: 0.3}}
               key={data.title}
               imageSrc={data.image}
               title={data.title}
-              featured
               onPress={() => {
                 this.props.navigation.navigate(
                   'Details',
                   { name: data.title },
-                  {
-                    params: { name: data.title },
-                  },
+                  { params: { name: data.title } },
                 );
               }}
-            />
+            >
+              <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Text>Caption</Text>
+                <Text>Caption</Text>
+              </View>
+            </Tile>
           );
         }
       });

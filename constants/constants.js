@@ -9,7 +9,7 @@ const recipes = [
     recipe_one: {
       category: 'savoury',
       title: 'Scrambled Eggs',
-      image: require('../public/squirrel.png'),
+      image: require('../public/scrambled_eggs.png'),
       ingredients: ['3 eggs', '1/4 cup diced zucchini', '1 handful spinach', '1/8 cup cheese'],
       instructions: [
         'Turn non-stick pan on medium heat.',
@@ -24,7 +24,7 @@ const recipes = [
     recipe_two: {
       category: 'savoury',
       title: 'Vegetable Stirfry',
-      image: require('../public/squirrel.png'),
+      image: require('../public/stirfry.png'),
       ingredients: ['1/4 cup diced green beans', '1/4 cup diced zucchini', '1/4 cup diced carrots', '1/4 cup diced seedless cucumbers', '1/2 cup cooked white rice'],
       instructions: [
         'Turn non-stick pan on medium heat.',
@@ -39,7 +39,7 @@ const recipes = [
     recipe_three: {
       category: 'savoury',
       title: 'Egg Salad',
-      image: require('../public/squirrel.png'),
+      image: require('../public/egg_salad.png'),
       ingredients: ['2 eggs', '1/4 cup sweet potato', '1/4 cup pumpkin'],
       instructions: [
         'Turn non-stick pan on medium heat.',
