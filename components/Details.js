@@ -7,11 +7,24 @@ import { StyleSheet,
 } from 'react-native';
 import { Card, List, ListItem } from 'react-native-elements';
 import Footer from './footer';
+import { colors } from '../constants/styles';
 import { recipes } from '../constants/constants';
 
 const styles = StyleSheet.create({
   view: {
     flex: 1,
+  },
+  title: {
+    margin: 10,
+    fontSize: 22,
+    color: colors.darkBlue,
+  },
+  header: {
+    fontSize: 18,
+    fontWeight: '800',
+    color: '#000',
+    marginTop: 20,
+    marginLeft: 10,
   },
 });
 
@@ -55,10 +68,15 @@ class Details extends React.Component {
         if (data.title === recipeName) {
           imagePath = data.image;
           return (
-            <List container>
-              {data.ingredients.map((item, key) => {
-                return (<ListItem key={key} title={item} />);
-              })}
+            <List container containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}>
+              {data.ingredients.map(item => (
+                <ListItem
+                  containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}
+                  title={item}
+                  titleStyle={{ fontSize: 16 }}
+                  titleNumberOfLines={2}
+                  hideChevron
+                />))}
             </List>
           );
         }
@@ -70,10 +88,16 @@ class Details extends React.Component {
         if (data.title === recipeName) {
           imagePath = data.image;
           return (
-            <List container>
-              {data.instructions.map((item, key) => {
-                return (<ListItem key={key} title={item} />);
-              })}
+            <List container containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}>
+              {data.instructions.map(item => (
+                <ListItem
+                  containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}
+                  titleStyle={{ fontSize: 16 }}
+                  titleNumberOfLines={4}
+                  title={item}
+                  hideChevron
+                />
+              ))}
             </List>
           );
         }
@@ -82,11 +106,17 @@ class Details extends React.Component {
     return (
       <View style={styles.view}>
         <ScrollView>
-          <Card image={imagePath}>
-            <Text style={{ marginBottom: 10 }}>
+          <Card image={imagePath} containerStyle={{marginBottom: 15}}>
+            <Text style={styles.title}>
               {recipeName}
             </Text>
+            <Text style={styles.header}>
+              Ingredients
+            </Text>
             {ingredients}
+            <Text style={styles.header}>
+              Instructions
+            </Text>
             {instructions}
           </Card>
         </ScrollView>

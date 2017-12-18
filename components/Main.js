@@ -93,7 +93,7 @@ class Main extends React.Component {
               }}
               imageContainerStyle={{ flex: 2 }}
               contentContainerStyle={{ flex: 1 }}
-              titleStyle={{color:colors.darkBlue, fontWeight: 0.3}}
+              titleStyle={{ color: colors.darkBlue, fontWeight: 0.3 }}
               key={data.title}
               imageSrc={data.image}
               title={data.title}
@@ -146,12 +146,24 @@ const MainModalStack = StackNavigator(
       screen: Details,
       navigationOptions: ({ navigation }) => ({
         title: `${navigation.state.params.name}`,
+        headerTintColor: '#FFF',
+        headerStyle: {
+          backgroundColor: colors.blue,
+          borderBottomWidth: 0.5,
+          borderBottomColor: colors.headerBorderBottomGrey,
+        },
       }),
     },
     HarveyFinder: {
       screen: HarveyFinder,
       navigationOptions: () => ({
         title: 'Find Harvey',
+        headerTintColor: '#FFF',
+        headerStyle: {
+          backgroundColor: colors.blue,
+          borderBottomWidth: 0.5,
+          borderBottomColor: colors.headerBorderBottomGrey,
+        },
       }),
     },
   },

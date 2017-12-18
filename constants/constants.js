@@ -23,7 +23,7 @@ const recipes = [
   {
     recipe_two: {
       category: 'savoury',
-      title: 'Vegetable Stirfry',
+      title: 'Vegetable Stir Fry',
       image: require('../public/stirfry.png'),
       ingredients: ['1/4 cup diced green beans', '1/4 cup diced zucchini', '1/4 cup diced carrots', '1/4 cup diced seedless cucumbers', '1/2 cup cooked white rice'],
       instructions: [
