@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   StyleSheet,
   View,
@@ -32,5 +33,10 @@ const RecipeSubheader = props => (
     </View>
   </View>
 );
+
+RecipeSubheader.propTypes = {
+  time: PropTypes.string.isRequired,
+  serving: PropTypes.string.isRequired,
+};
 
 export default RecipeSubheader;

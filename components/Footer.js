@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   StyleSheet,
   TouchableOpacity,
@@ -59,5 +60,10 @@ const Footer = props => (
   </View>
 );
 
+Footer.propTypes = {
+  sweetPressed: PropTypes.func.isRequired,
+  locationPressed: PropTypes.func.isRequired,
+  savouryPressed: PropTypes.func.isRequired,
+};
 
 export default Footer;

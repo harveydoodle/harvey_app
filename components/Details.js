@@ -1,4 +1,6 @@
+
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StackNavigator } from 'react-navigation';
 import { StyleSheet,
   Text,
@@ -49,6 +51,7 @@ function mapRecipe(data, type, recipeName) {
           </List>
         );
       }
+      return false;
     });
   }));
 }
@@ -87,8 +90,8 @@ class Details extends React.Component {
   render() {
     const recipeName = this.props.navigation.state.params.name;
     let imagePath;
-    let time;
-    let serving;
+    let cookTime;
+    let servings;
 
     const ingredients = mapRecipe(recipes, 'ingredients', recipeName);
     const instructions = mapRecipe(recipes, 'instructions', recipeName);
@@ -97,9 +100,10 @@ class Details extends React.Component {
       return eachRecipe.map((info) => {
         if (info.title === recipeName) {
           imagePath = info.image;
-          time = info.time;
-          serving = info.serving;
+          cookTime = info.time;
+          servings = info.serving;
         }
+        return false;
       });
     });
 
@@ -107,7 +111,7 @@ class Details extends React.Component {
       <View style={styles.view}>
         <ScrollView>
           <Card image={imagePath} containerStyle={{ marginBottom: 15 }}>
-            <RecipeSubheader time={time} serving={serving} />
+            <RecipeSubheader time={cookTime} serving={servings} />
             <Text style={styles.header}>
               Ingredients
             </Text>
@@ -139,5 +143,16 @@ const DetailsModalStack = StackNavigator(
   },
   { headerMode: 'none' },
 );
+
+Details.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+    state: PropTypes.shape({
+      params: PropTypes.shape({
+        name: PropTypes.string,
+      }),
+    }).isRequired,
+  }).isRequired,
+};
 
 export default DetailsModalStack;

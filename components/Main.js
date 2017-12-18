@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   StyleSheet,
   ScrollView,
@@ -121,6 +122,7 @@ class Main extends React.Component {
             </Tile>
           );
         }
+        return false;
       });
     });
     return (
@@ -189,5 +191,16 @@ const MainModalStack = StackNavigator(
     headerMode: 'screen',
   },
 );
+
+Main.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+    state: PropTypes.shape({
+      params: PropTypes.shape({
+        category: PropTypes.string,
+      }),
+    }).isRequired,
+  }).isRequired,
+};
 
 export default MainModalStack;

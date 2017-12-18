@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   StyleSheet,
   Text,
@@ -55,7 +56,7 @@ class SplashPage extends React.Component {
     super(props);
     this.state = {};
     this.enterPressed = this.enterPressed.bind(this);
-    console.disableYellowBox = true;
+    console.disableYellowBox = true; // eslint-disable-line
   }
 
   enterPressed() {
@@ -99,5 +100,11 @@ const ModalStack = StackNavigator({
     },
   },
 });
+
+SplashPage.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default ModalStack;
