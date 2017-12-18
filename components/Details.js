@@ -5,7 +5,9 @@ import { StyleSheet,
   View,
   ScrollView,
 } from 'react-native';
+import { Card, List, ListItem } from 'react-native-elements';
 import Footer from './footer';
+import { recipes } from '../constants/constants';
 
 const styles = StyleSheet.create({
   view: {
@@ -46,11 +48,47 @@ class Details extends React.Component {
 
   render() {
     const recipeName = this.props.navigation.state.params.name;
-
+    let imagePath;
+    const ingredients = recipes.map((recipe) => {
+      const eachRecipe = Object.values(recipe);
+      return eachRecipe.map((data) => {
+        if (data.title === recipeName) {
+          imagePath = data.image;
+          return (
+            <List container>
+              {data.ingredients.map((item, key) => {
+                return (<ListItem key={key} title={item} />);
+              })}
+            </List>
+          );
+        }
+      });
+    });
+    const instructions = recipes.map((recipe) => {
+      const eachRecipe = Object.values(recipe);
+      return eachRecipe.map((data) => {
+        if (data.title === recipeName) {
+          imagePath = data.image;
+          return (
+            <List container>
+              {data.instructions.map((item, key) => {
+                return (<ListItem key={key} title={item} />);
+              })}
+            </List>
+          );
+        }
+      });
+    });
     return (
       <View style={styles.view}>
         <ScrollView>
-          <Text>yo</Text>
+          <Card image={imagePath}>
+            <Text style={{ marginBottom: 10 }}>
+              {recipeName}
+            </Text>
+            {ingredients}
+            {instructions}
+          </Card>
         </ScrollView>
         <View>
           <Footer
