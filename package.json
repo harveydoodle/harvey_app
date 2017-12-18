@@ -30,6 +30,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "expo": "^23.0.4",
+    "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-native": "0.50.4",
     "react-native-elements": "^0.18.5",
