@@ -93,7 +93,7 @@ class Main extends React.Component {
               }}
               imageContainerStyle={{ flex: 2 }}
               contentContainerStyle={{ flex: 1 }}
-              titleStyle={{ color: colors.darkBlue, fontWeight: 0.3 }}
+              titleStyle={{ color: colors.darkBlue, fontWeight: '700' }}
               key={data.title}
               imageSrc={data.image}
               title={data.title}
@@ -105,7 +105,7 @@ class Main extends React.Component {
                 );
               }}
             >
-              <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
+              <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-start' }}>
                 <Text>Caption</Text>
                 <Text>Caption</Text>
               </View>

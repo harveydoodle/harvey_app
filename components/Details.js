@@ -13,6 +13,7 @@ import { recipes } from '../constants/constants';
 const styles = StyleSheet.create({
   view: {
     flex: 1,
+    backgroundColor: colors.lightBlue,
   },
   title: {
     margin: 10,
@@ -71,6 +72,7 @@ class Details extends React.Component {
             <List container containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}>
               {data.ingredients.map(item => (
                 <ListItem
+                  key={item}
                   containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}
                   title={item}
                   titleStyle={{ fontSize: 16 }}
@@ -91,6 +93,7 @@ class Details extends React.Component {
             <List container containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}>
               {data.instructions.map(item => (
                 <ListItem
+                  key={item}
                   containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}
                   titleStyle={{ fontSize: 16 }}
                   titleNumberOfLines={4}
@@ -106,7 +109,7 @@ class Details extends React.Component {
     return (
       <View style={styles.view}>
         <ScrollView>
-          <Card image={imagePath} containerStyle={{marginBottom: 15}}>
+          <Card image={imagePath} containerStyle={{ marginBottom: 15 }}>
             <Text style={styles.title}>
               {recipeName}
             </Text>
