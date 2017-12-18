@@ -1,3 +1,6 @@
+//Google Maps SDK for iOs API key
+const RNMAPS_API_KEY = 'AIzaSyDhOp-VR6sTPz1189OVFLGATSio636GXCk';
+
 const RECIPES = [
   {
     recipe_one: {
@@ -89,6 +92,7 @@ const RECIPES = [
 ];
 
 module.exports = {
+  RNMAPS_API_KEY,
   RECIPES,
 };
 

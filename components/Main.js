@@ -53,7 +53,7 @@ class Main extends React.Component {
     console.log('location pressed');
 
     this.props.navigation.navigate(
-      'Location',
+      'HarveyFinder',
       { category: 'location' },
     );
   }
@@ -125,7 +125,7 @@ const MainModalStack = StackNavigator(
         title: `${navigation.state.params.name}`,
       }),
     },
-    Location: {
+    HarveyFinder: {
       screen: HarveyFinder,
       navigationOptions: ({ navigation }) => ({
         title: `${navigation.state.params.name}`,
