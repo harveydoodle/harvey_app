@@ -1,5 +1,5 @@
 import MapView from 'react-native-maps';
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
@@ -25,34 +25,26 @@ const styles = StyleSheet.create({
   },
 });
 
-class HarveyFinder extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        <MapView
-          style={styles.map}
-          initialRegion={{
-            latitude: location.latitude,
-            longitude: location.longitude,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}
-        >
-          <MapView.Marker
-            coordinate={{
-              latitude: location.latitude,
-              longitude: location.longitude,
-            }}
-            title="Woof!"
-          />
-        </MapView>
-      </View>
-    );
-  }
-}
+const HarveyFinder = () => (
+  <View style={styles.container}>
+    <MapView
+      style={styles.map}
+      initialRegion={{
+        latitude: location.latitude,
+        longitude: location.longitude,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+      }}
+    >
+      <MapView.Marker
+        coordinate={{
+          latitude: location.latitude,
+          longitude: location.longitude,
+        }}
+        title="Woof!"
+      />
+    </MapView>
+  </View>
+);
 
 export default HarveyFinder;

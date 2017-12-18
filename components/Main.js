@@ -15,18 +15,14 @@ import Footer from './footer';
 import HarveyFinder from './harvey_finder';
 import RecipeSubheader from './recipe_details';
 import { recipes } from '../constants/constants';
-import { colors } from '../constants/styles';
+import { colors, navHeaderStyle } from '../constants/styles';
 
 const styles = StyleSheet.create({
   view: {
     flex: 1,
     backgroundColor: colors.lightBlue,
   },
-  headerIconWrapper: {
-    backgroundColor: colors.blue,
-    borderBottomWidth: 0.5,
-    borderBottomColor: colors.headerBorderBottomGrey,
-  },
+  headerIconWrapper: navHeaderStyle,
   headerIcon: {
     alignSelf: 'center',
     height: 32,
@@ -158,11 +154,7 @@ const MainModalStack = StackNavigator(
       navigationOptions: ({ navigation }) => ({
         title: `${navigation.state.params.name}`,
         headerTintColor: '#FFF',
-        headerStyle: {
-          backgroundColor: colors.blue,
-          borderBottomWidth: 0.5,
-          borderBottomColor: colors.headerBorderBottomGrey,
-        },
+        headerStyle: navHeaderStyle,
       }),
     },
     HarveyFinder: {
@@ -170,11 +162,7 @@ const MainModalStack = StackNavigator(
       navigationOptions: () => ({
         title: 'Find Harvey',
         headerTintColor: '#FFF',
-        headerStyle: {
-          backgroundColor: colors.blue,
-          borderBottomWidth: 0.5,
-          borderBottomColor: colors.headerBorderBottomGrey,
-        },
+        headerStyle: navHeaderStyle,
       }),
     },
   },

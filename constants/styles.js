@@ -11,7 +11,15 @@ const colors = {
   headerBorderBottomGrey: '#9E9E9E',
 };
 
+// StackNavigator styling
+const navHeaderStyle = {
+  backgroundColor: colors.blue,
+  borderBottomWidth: 0.5,
+  borderBottomColor: colors.headerBorderBottomGrey,
+};
+
 module.exports = {
   footerHeight,
   colors,
+  navHeaderStyle,
 };

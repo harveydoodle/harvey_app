@@ -45,7 +45,7 @@ function mapRecipe(data, type, recipeName) {
                 containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}
                 title={item}
                 titleStyle={{ fontSize: 16 }}
-                titleNumberOfLines={2}
+                titleNumberOfLines={4}
                 hideChevron
               />))}
           </List>
