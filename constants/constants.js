@@ -1,7 +1,10 @@
-//Google Maps SDK for iOs API key
-const RNMAPS_API_KEY = 'AIzaSyDhOp-VR6sTPz1189OVFLGATSio636GXCk';
+// Harvey's coordinates
+const location = {
+  latitude: 43.635043,
+  longitude: -79.346423,
+};
 
-const RECIPES = [
+const recipes = [
   {
     recipe_one: {
       category: 'savoury',
@@ -92,7 +95,7 @@ const RECIPES = [
 ];
 
 module.exports = {
-  RNMAPS_API_KEY,
-  RECIPES,
+  location,
+  recipes,
 };
 

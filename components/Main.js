@@ -12,7 +12,7 @@ import { Tile } from 'react-native-elements';
 import Details from './details';
 import Footer from './footer';
 import HarveyFinder from './harvey_finder';
-import { RECIPES } from '../constants/constants';
+import { recipes } from '../constants/constants';
 import { colors } from '../constants/styles';
 
 const styles = StyleSheet.create({
@@ -72,7 +72,7 @@ class Main extends React.Component {
 
   render() {
     const filter = this.props.navigation.state.params.category;
-    const tiles = RECIPES.map((recipe) => {
+    const tiles = recipes.map((recipe) => {
       const eachRecipe = Object.values(recipe);
       return eachRecipe.map((data) => {
         if (data.category === filter) {

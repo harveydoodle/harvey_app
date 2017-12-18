@@ -2,13 +2,9 @@ import MapView from 'react-native-maps';
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  ScrollView,
   View,
-  Image,
-  Text,
-  Animated,
-  Easing,
 } from 'react-native';
+import { location } from '../constants/constants';
 
 const styles = StyleSheet.create({
   container: {
@@ -40,17 +36,18 @@ class HarveyFinder extends Component {
         <MapView
           style={styles.map}
           initialRegion={{
-            latitude: 43.635043,
-            longitude: -79.346423,
+            latitude: location.latitude,
+            longitude: location.longitude,
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
         >
           <MapView.Marker
-            coordinate={{latitude: 43.635043,
-            longitude: -79.346423}}
-            title={"Woof!"}
-            description={"I'm here!"}
+            coordinate={{
+              latitude: location.latitude,
+              longitude: location.longitude,
+            }}
+            title="Woof!"
           />
         </MapView>
       </View>
