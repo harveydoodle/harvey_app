@@ -6,7 +6,6 @@ import { StyleSheet,
   ScrollView,
 } from 'react-native';
 import Footer from './footer';
-import MainModalStack from './main';
 
 const styles = StyleSheet.create({
   view: {
@@ -32,12 +31,10 @@ class Details extends React.Component {
   }
 
   locationPressed() {
-    console.log('location pressed');
-
-  //   this.props.navigation.navigate(
-  //     'Main',
-  //     { category: 'location' },
-  //   );
+    this.props.navigation.navigate(
+      'HarveyFinder',
+      { category: 'HarveyFinder' },
+    );
   }
 
   sweetPressed() {

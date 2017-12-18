@@ -57,8 +57,6 @@ class Main extends React.Component {
   }
 
   locationPressed() {
-    console.log('location pressed');
-
     this.props.navigation.navigate(
       'HarveyFinder',
       { category: 'location' },
@@ -135,10 +133,7 @@ const MainModalStack = StackNavigator(
     HarveyFinder: {
       screen: HarveyFinder,
       navigationOptions: () => ({
-        headerTitle: (
-          <View style={styles.headerIconWrapper}>
-            <Image source={require('../public/harvey.png')} style={styles.headerIconWithBackButton} />
-          </View>),
+        title: 'Find Harvey',
       }),
     },
   },
