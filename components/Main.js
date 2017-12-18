@@ -44,6 +44,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     padding: 10,
   },
+  subheaderContentWrapper: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginRight: 5,
+  },
+  subheaderIcon: {
+    width: 20,
+    resizeMode: 'contain',
+    marginRight: 5,
+  },
 });
 
 class Main extends React.Component {
@@ -106,8 +116,14 @@ class Main extends React.Component {
               }}
             >
               <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-start' }}>
-                <Text>Caption</Text>
-                <Text>Caption</Text>
+                <View style={styles.subheaderContentWrapper}>
+                  <Image source={require('../public/clock.png')} style={styles.subheaderIcon} />
+                  <Text>{data.time}</Text>
+                </View>
+                <View style={styles.subheaderContentWrapper}>
+                  <Image source={require('../public/serving.png')} style={styles.subheaderIcon} />
+                  <Text>{data.serving}</Text>
+                </View>
               </View>
             </Tile>
           );

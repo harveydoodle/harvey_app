@@ -9,6 +9,8 @@ const recipes = [
     recipe_one: {
       category: 'savoury',
       title: 'Scrambled Eggs',
+      time: '15 min',
+      serving: '1 meal',
       image: require('../public/scrambled_eggs.png'),
       ingredients: ['3 eggs', '1/4 cup diced zucchini', '1 handful spinach', '1/8 cup cheese'],
       instructions: [
@@ -24,6 +26,8 @@ const recipes = [
     recipe_two: {
       category: 'savoury',
       title: 'Vegetable Stir Fry',
+      time: '15 min',
+      serving: '1 meal',
       image: require('../public/stirfry.png'),
       ingredients: ['1/4 cup diced green beans', '1/4 cup diced zucchini', '1/4 cup diced carrots', '1/4 cup diced seedless cucumbers', '1/2 cup cooked white rice'],
       instructions: [
@@ -39,6 +43,8 @@ const recipes = [
     recipe_three: {
       category: 'savoury',
       title: 'Egg Salad',
+      time: '15 min',
+      serving: '1 meal',
       image: require('../public/egg_salad.png'),
       ingredients: ['2 eggs', '1/4 cup sweet potato', '1/4 cup pumpkin'],
       instructions: [
@@ -54,6 +60,8 @@ const recipes = [
     recipe_four: {
       category: 'sweet',
       title: 'Fruit Plate',
+      time: '15 min',
+      serving: '1 meal',
       image: require('../public/fruits.png'),
       ingredients: ['1/4 cup frozen blueberries', '1/4 cup frozen banana', '1/4 cup diced apples', '1/4 cup diced seedless watermelon'],
       instructions: [
@@ -65,6 +73,8 @@ const recipes = [
     recipe_five: {
       category: 'sweet',
       title: 'Peanut Butter Muffins',
+      time: '15 min',
+      serving: '1 meal',
       image: require('../public/muffins.png'),
       ingredients: ['1 egg', '1/2 finely grated apple', '3 tablespoons peanut butter', '1/2 teaspoon baking powder'],
       instructions: [
@@ -80,6 +90,8 @@ const recipes = [
     recipe_six: {
       category: 'sweet',
       title: 'Blueberry Pancakes',
+      time: '15 min',
+      serving: '1 meal',
       image: require('../public/pancakes.png'),
       ingredients: ['1 egg', '1/4 cup blueberries', '1 banana', '1 tablespoon peanut butter'],
       instructions: [
