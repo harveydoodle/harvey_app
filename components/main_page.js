@@ -39,8 +39,6 @@ const styles = StyleSheet.create({
   tile: {
     flex: 1,
     backgroundColor: '#FFF',
-    padding: 10,
-    borderWidth:1,
   },
   subheaderContentWrapper: {
     alignItems: 'center',

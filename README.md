@@ -1,9 +1,37 @@
+## the Harvey App
+This is dedicated to Harvey the Goldendoodle, lover of all things edible.
+A basic app showcasing all of Harvey's favourite foods as well as a bonus feature: Find Harvey.
+
+To increase efficiency, I've decided to attempt `create-react-native-app` to create an app without xCode.
+
+1. Install the package. Please ensure your npm and node are up to date to latest stable version.
+```
+npm install
+```
+
+2. Run the app.
+To view on simulator:
+```
+npm run ios
+```
+
+or
+
+To view on device with the Expo app:
+```
+npm start
+```
+
+
+## Notes
+Please ensure your 
+
+Follow https://github.com/react-native-training/react-native-elements/issues/740 for progress on resizeMode console warning.
+
+## ORIGINAL README
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
-
-## Notes
-See https://github.com/react-native-training/react-native-elements/issues/740 for resizeMdoe warning
 
 ## Table of Contents
 
