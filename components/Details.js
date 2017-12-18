@@ -7,6 +7,7 @@ import { StyleSheet,
 } from 'react-native';
 import { Card, List, ListItem } from 'react-native-elements';
 import Footer from './footer';
+import RecipeSubheader from './recipe_details';
 import { colors } from '../constants/styles';
 import { recipes } from '../constants/constants';
 
@@ -28,6 +29,29 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
 });
+
+function mapRecipe(data, type, recipeName) {
+  return (data.map((recipe) => {
+    const eachRecipe = Object.values(recipe);
+    return eachRecipe.map((info) => {
+      if (info.title === recipeName) {
+        return (
+          <List container containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}>
+            {info[type].map(item => (
+              <ListItem
+                key={item}
+                containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}
+                title={item}
+                titleStyle={{ fontSize: 16 }}
+                titleNumberOfLines={2}
+                hideChevron
+              />))}
+          </List>
+        );
+      }
+    });
+  }));
+}
 
 class Details extends React.Component {
   constructor(props) {
@@ -63,56 +87,27 @@ class Details extends React.Component {
   render() {
     const recipeName = this.props.navigation.state.params.name;
     let imagePath;
-    const ingredients = recipes.map((recipe) => {
+    let time;
+    let serving;
+
+    const ingredients = mapRecipe(recipes, 'ingredients', recipeName);
+    const instructions = mapRecipe(recipes, 'instructions', recipeName);
+    recipes.map((recipe) => {
       const eachRecipe = Object.values(recipe);
-      return eachRecipe.map((data) => {
-        if (data.title === recipeName) {
-          imagePath = data.image;
-          return (
-            <List container containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}>
-              {data.ingredients.map(item => (
-                <ListItem
-                  key={item}
-                  containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}
-                  title={item}
-                  titleStyle={{ fontSize: 16 }}
-                  titleNumberOfLines={2}
-                  hideChevron
-                />))}
-            </List>
-          );
+      return eachRecipe.map((info) => {
+        if (info.title === recipeName) {
+          imagePath = info.image;
+          time = info.time;
+          serving = info.serving;
         }
       });
     });
-    const instructions = recipes.map((recipe) => {
-      const eachRecipe = Object.values(recipe);
-      return eachRecipe.map((data) => {
-        if (data.title === recipeName) {
-          imagePath = data.image;
-          return (
-            <List container containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}>
-              {data.instructions.map(item => (
-                <ListItem
-                  key={item}
-                  containerStyle={{ borderBottomWidth: 0, borderTopWidth: 0 }}
-                  titleStyle={{ fontSize: 16 }}
-                  titleNumberOfLines={4}
-                  title={item}
-                  hideChevron
-                />
-              ))}
-            </List>
-          );
-        }
-      });
-    });
+
     return (
       <View style={styles.view}>
         <ScrollView>
           <Card image={imagePath} containerStyle={{ marginBottom: 15 }}>
-            <Text style={styles.title}>
-              {recipeName}
-            </Text>
+            <RecipeSubheader time={time} serving={serving} />
             <Text style={styles.header}>
               Ingredients
             </Text>

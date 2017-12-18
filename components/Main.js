@@ -6,13 +6,13 @@ import {
   Image,
   Animated,
   Easing,
-  Text,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Tile } from 'react-native-elements';
 import Details from './details';
 import Footer from './footer';
 import HarveyFinder from './harvey_finder';
+import RecipeSubheader from './recipe_details';
 import { recipes } from '../constants/constants';
 import { colors } from '../constants/styles';
 
@@ -95,7 +95,9 @@ class Main extends React.Component {
           return (
             <Tile
               containerStyle={{
-                margin: 15,
+                marginLeft: 15,
+                marginRight: 15,
+                marginTop: 15,
                 flex: 1,
                 width: 'auto',
                 height: 220,
@@ -115,16 +117,7 @@ class Main extends React.Component {
                 );
               }}
             >
-              <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-start' }}>
-                <View style={styles.subheaderContentWrapper}>
-                  <Image source={require('../public/clock.png')} style={styles.subheaderIcon} />
-                  <Text>{data.time}</Text>
-                </View>
-                <View style={styles.subheaderContentWrapper}>
-                  <Image source={require('../public/serving.png')} style={styles.subheaderIcon} />
-                  <Text>{data.serving}</Text>
-                </View>
-              </View>
+              <RecipeSubheader time={data.time} serving={data.serving} />
             </Tile>
           );
         }
